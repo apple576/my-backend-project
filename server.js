@@ -5,6 +5,11 @@ const cors = require('cors'); // 處理跨域請求
 const app = express();
 const port = 3001;
 
+app.use(cors({
+  origin: "http://localhost:3000", // 允許的前端來源
+  methods: "GET,POST",             // 允許的 HTTP 方法
+  credentials: true                // 允許攜帶 cookie 等憑證
+}));
 // 啟用 CORS
 app.use(cors());
 
